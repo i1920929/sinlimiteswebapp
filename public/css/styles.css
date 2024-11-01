@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    width: 50%;
+    background-color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-section .logo img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #4A3C8C;
+    font-size: 16px;
+    outline: none;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember label {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.login-button,
+.create-account-button {
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button {
+    background-color: #3CC1B9;
+    color: white;
+    margin-right: 10px;
+}
+
+.create-account-button {
+    background-color: white;
+    color: #3CC1B9;
+    border: 2px solid #3CC1B9;
+}
+
+.login-button:hover {
+    background-color: #35b1a8;
+}
+
+.create-account-button:hover {
+    background-color: #f0f0f0;
+}
+
+.right-section {
+    width: 50%;
+    background: linear-gradient(135deg, #4A3C8C, #3CC1B9);
+    position: relative;
+    clip-path: ellipse(70% 100% at 100% 0%);
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.menu-login {
+    background-color: #3CC1B9;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Estilos para el icono de hamburguesa */
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    color: gray; /* Cambia el color a gris */
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Mueve el icono a la izquierda */
+    z-index: 10; /* Asegura que el ícono esté al frente */
+    cursor: pointer;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section {
+        width: 100%;
+    }
+
+    .right-section {
+        width: 100%;
+        clip-path: none;
+    }
+
+    /* Esconde el menú de navegación y muestra el icono de hamburguesa */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: -420px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}

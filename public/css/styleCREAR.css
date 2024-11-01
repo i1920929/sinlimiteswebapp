@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    width: 50%;
+    background-color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-section .logo img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.register-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.register-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"],
+.register-form input[type="date"],
+.register-form input[type="number"],
+.register-form select {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #4A3C8C;
+    font-size: 16px;
+    outline: none;
+}
+
+.button-group {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.login-button,
+.create-account-button {
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button {
+    background-color: white;
+    color: #3CC1B9;
+    border: 2px solid #3CC1B9;
+}
+
+.create-account-button {
+    background-color: #3CC1B9;
+    color: white;
+}
+
+.login-button:hover {
+    background-color: #f0f0f0;
+}
+
+.create-account-button:hover {
+    background-color: #35b1a8;
+}
+
+.right-section {
+    width: 50%;
+    background: linear-gradient(135deg, #4A3C8C, #3CC1B9);
+    position: relative;
+    clip-path: ellipse(70% 100% at 100% 0%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.profile-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        clip-path: none;
+    }
+
+    .register-form {
+        grid-template-columns: 1fr;
+    }
+
+    .right-section {
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
